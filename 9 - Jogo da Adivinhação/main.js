@@ -49,7 +49,11 @@ function handleTryClick(event) {
 function handleResetClick() {
     toggleScreen()
 
-    xAttempts = 1
+    if(inputNumberValue === ramdomNumber) {
+        xAttempts = 1
+        
+    }
+    inputNumber.value = ""
     ramdomNumber = Math.round(Math.random() * 10)
 }
 
