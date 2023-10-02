@@ -26,8 +26,8 @@ function handleTryClick(event) {
     const inputNumberValue = Number(inputNumber.value)
     
     if(isNaN(inputNumberValue) || inputNumberValue < 0 || inputNumberValue > 10) {
-        alert("Por favor, insira um número válido entre 0 e 10.")
-        inputNumber.value = ""
+        toggleScreen()
+        document.querySelector(".screen2 h2").innerText = `Por favor, insira um número válido entre 0 e 10.`
         return
     }
     
@@ -37,7 +37,11 @@ function handleTryClick(event) {
         return
     }
 
-    alert("Número incorreto! Tente novamente.")
+    if(inputNumber != ramdomNumber) {
+        toggleScreen()
+        document.querySelector(".screen2 h2").innerText = `Tente Novamente`
+    }
+    
     inputNumber.value = ""
     xAttempts++
 }
